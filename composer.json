@@ -1,0 +1,11 @@
+{
+  "name": "pxgamer/common",
+  "description": "A collection of common classes.",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "pxgamer\\Common\\": "src/"
+    }
+  }
+}
