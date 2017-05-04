@@ -34,7 +34,7 @@ class File
      */
     public function __construct($absolute_path)
     {
-        $this->directory = dirname($absolute_path);
+        $this->directory = dirname($absolute_path) . DIRECTORY_SEPARATOR;
         $this->file = basename($absolute_path);
     }
 
