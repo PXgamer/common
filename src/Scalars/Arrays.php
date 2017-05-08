@@ -57,14 +57,14 @@ class Arrays
      * @param array $b
      * @return array
      */
-    public static function array_key_intersect(&$a, &$b)
+    public static function array_intersect_recursive(&$a, &$b)
     {
         $aReturn = array();
 
         foreach ($a as $mKey => $mValue) {
             if (array_key_exists($mKey, $b)) {
                 if (is_array($mValue)) {
-                    $aRecursiveDiff = array_key_intersect($mValue, $b[$mKey]);
+                    $aRecursiveDiff = self::array_intersect_recursive($mValue, $b[$mKey]);
                     if (count($aRecursiveDiff)) {
                         $aReturn[$mKey] = $aRecursiveDiff;
                     }
