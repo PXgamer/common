@@ -51,4 +51,32 @@ class Arrays
         }
         return $returnArr;
     }
+
+    /**
+     * @param array $a
+     * @param array $b
+     * @return array
+     */
+    public static function array_key_intersect(&$a, &$b)
+    {
+        $aReturn = array();
+
+        foreach ($a as $mKey => $mValue) {
+            if (array_key_exists($mKey, $b)) {
+                if (is_array($mValue)) {
+                    $aRecursiveDiff = array_key_intersect($mValue, $b[$mKey]);
+                    if (count($aRecursiveDiff)) {
+                        $aReturn[$mKey] = $aRecursiveDiff;
+                    }
+                } else {
+                    if ($mValue != $b[$mKey]) {
+                        $aReturn[$mKey] = $mValue;
+                    }
+                }
+            } else {
+                $aReturn[$mKey] = $mValue;
+            }
+        }
+        return $aReturn;
+    }
 }
