@@ -117,7 +117,7 @@ class Session
      * @param string $p_sKey
      * @return bool
      */
-    public static function unset($p_sKey)
+    public static function _unset($p_sKey)
     {
         if (isset($_SESSION[$p_sKey])) {
             unset($_SESSION[$p_sKey]);
@@ -131,7 +131,7 @@ class Session
      * @param string $p_sKey
      * @return bool
      */
-    public static function isset($p_sKey)
+    public static function _isset($p_sKey)
     {
         return isset($_SESSION[$p_sKey]);
     }
