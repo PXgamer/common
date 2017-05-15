@@ -17,7 +17,7 @@ class Error
 
     public function __get($name)
     {
-        if ($this->$name ?? false) {
+        if (isset($this->$name) && $this->$name) {
             return $this->$name;
         }
 
