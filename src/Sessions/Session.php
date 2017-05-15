@@ -51,7 +51,10 @@ class Session
     {
         $_SESSION = array();
         if (session_id() != "" || isset($_COOKIE[session_name()])) {
-            setcookie(session_name(), '', time() - self::timeout(), '/');
+            $cookie_name = session_name();
+            setcookie($cookie_name, '', time() - self::timeout(), '/');
+            setcookie($cookie_name, false);
+            unset($_COOKIE[$cookie_name]);
         }
 
         if (session_destroy()) {
