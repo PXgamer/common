@@ -8,11 +8,11 @@ class Error
     protected $text;
     protected $data;
 
-    public function __construct()
+    public function __construct($code = 0, $text = 'An unknown error occurred.', $data = null)
     {
-        $this->code = 0;
-        $this->text = 'An unknown error occurred.';
-        $this->data = null;
+        $this->code = $code;
+        $this->text = $text;
+        $this->data = $data;
     }
 
     public function __get($name)
