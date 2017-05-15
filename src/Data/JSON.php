@@ -20,8 +20,8 @@ class JSON
      * Which would output:
      * ```
      *  {
-     *    'message' => 'This is JSON.',
-     *    'code' => 123
+     *    "message": "This is JSON.",
+     *    "code": 123
      *  }
      * ```
      *
